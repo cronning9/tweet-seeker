@@ -1,0 +1,12 @@
+body {
+  text-align: center; }
+
+#login {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  word-wrap: break-word; }
+  #login button {
+    cursor: pointer; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,20 @@
+{
+  "name": "trend-seek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "oauth": "^0.9.15",
+    "request": "^2.81.0",
+    "request-promise": "^4.1.1",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
