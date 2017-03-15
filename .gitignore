@@ -1,3 +1,4 @@
 .idea
+node_modules
 # startup script on Windows
 *.ps1
