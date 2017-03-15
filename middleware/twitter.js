@@ -6,6 +6,7 @@ const path = require('path');
 const qs = require('querystring');
 const request = require('request-promise');
 const OAuth = require('oauth');
+const OauthAsync = require('../lib/oauthAsync');
 
 const CLIENT_KEY = process.env.CLIENT_KEY;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -21,27 +22,12 @@ const oauth = new OAuth.OAuth(
   'HMAC-SHA1'
 );
 
-const getRequestToken = new Promise((resolve, reject) => {
-  const tokens = {};
-  oauth.getOAuthRequestToken((err, token, tokenSecret, results) => {
-    if (err) console.error(err);
-    if (!results || !results['oauth_callback_confirmed']) {
-      reject("There seems to have been a problem with your request");
-    }
-
-    tokens.appToken = token;
-    tokens.appSecret = tokenSecret;
-    resolve(tokens);
-  });
-})
-
+const aOauth = new OauthAsync(oauth);
 
 router.use('/login', (req, res) => {
-  getRequestToken.then(tokens => {
-    console.log(tokens);
+  aOauth.getRequestToken().then(tokens => {
     res.send(`https://api.twitter.com/oauth/authenticate?oauth_token=${qs.escape(tokens.appToken)}`);
   })
-
 
 });
 
