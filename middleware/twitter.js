@@ -6,7 +6,6 @@ const path = require('path');
 const qs = require('querystring');
 const request = require('request-promise');
 const passport = require('passport');
-const TwitterStrategy = require('passport-twitter').Strategy;
 
 router.get('/login', passport.authenticate('twitter'));
 

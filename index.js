@@ -10,6 +10,7 @@ const passport = require('passport');
 const TwitterStrategy = require('passport-twitter').Strategy;
 const twitter = require('./middleware/twitter');
 
+const SESSION_SECRET = process.env.SESSION_SECRET;
 const CLIENT_KEY = process.env.CLIENT_KEY;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const CALLBACK_URL = 'http://localhost:3000/twitter/auth';
@@ -32,7 +33,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(session({
-  secret: 'secret derp derp',
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
