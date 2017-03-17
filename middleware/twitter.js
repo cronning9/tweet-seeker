@@ -11,12 +11,10 @@ router.get('/login', passport.authenticate('twitter'));
 
 router.get('/auth', passport.authenticate('twitter', {failureFlash: 'Unable to authenticate user.'}),
   (req, res) => {
-    console.log(req.session);
     res.redirect('/')
   });
 
 router.get('/get-user', (req, res) => {
-  console.log(req.session);
   if (req.session.passport) {
     const userData = req.session.passport.user;
     const sending = {
