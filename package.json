@@ -2,11 +2,11 @@
   "name": "trend-seek",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start:windows": "powershell ./start.ps1",
-    "start": "node index",
-    "monitor": "nodemon index"
+    "start": "node server",
+    "monitor": "nodemon server"
   },
   "author": "",
   "license": "ISC",
