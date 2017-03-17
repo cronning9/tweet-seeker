@@ -34,4 +34,17 @@
         padding: .4em;
         border: .5px solid darkgrey; }
 
+#search-page {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right top, #718fa9, #e2e8ed); }
+  #search-page p {
+    margin: 1em;
+    font-family: Noto Sans, sans-serif;
+    font-size: 55px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
 import React from 'react';
 
 import SplashPage from './components/Splash/SplashPage.jsx';
+import SearchPage from './components/Search/SearchPage.jsx';
 
 export default class App extends React.Component {
   constructor() {
@@ -14,7 +15,6 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("here");
     fetch('twitter/get-user', {
       method: 'GET',
       credentials: 'same-origin'
@@ -31,7 +31,7 @@ export default class App extends React.Component {
   render() {
     return (
       <main>
-        { !this.state.loggedIn ? <SplashPage/> : <div>I'm logged In!</div> }
+        { !this.state.loggedIn ? <SplashPage/> : <SearchPage user={this.state.user}/> }
       </main>
     )
   }

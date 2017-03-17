@@ -1,5 +1,15 @@
 $tile-blue: #718fa9;
 $light-tile-blue: #e2e8ed;
+
+@mixin top-level-component() {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,16 +18,12 @@ $light-tile-blue: #e2e8ed;
 #app {
   height: 100%;
   width: 100%;
+
 }
 
 #splash-page {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
+  @include top-level-component();
+
   text-align: center;
 
   #splash-content {
@@ -47,10 +53,15 @@ $light-tile-blue: #e2e8ed;
 
 
     }
-
-    #twitter-login img {
-
-    }
   }
 
+}
+
+#search-page {
+  @include top-level-component();
+  p {
+    margin: 1em;
+    font-family: Noto Sans, sans-serif;
+    font-size: 55px;
+  }
 }
