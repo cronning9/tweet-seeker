@@ -38,10 +38,12 @@ passport.use(new TwitterStrategy({
 }, (token, tokenSecret, profile, callback) => callback(null, profile)));
 
 passport.serializeUser((user, cb) => {
+  console.log("serializing");
   cb(null, user);
 });
 
 passport.deserializeUser((obj, cb) => {
+  console.log("deserializing")
   cb(null, obj);
 });
 
@@ -51,8 +53,12 @@ app.use(cookieParser());
 app.use(session({
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 86400000
+  }
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -19,13 +19,20 @@ const config = {
         test: /\.(jsx|js)?$/,
         exclude: 'node_modules',
         loader: 'babel-loader'
-      }
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 25000,
+        },
+      },
     ]
   },
   plugins: [
     new webpack.ProvidePlugin({
       'Promise': 'es6-promise',
-      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+      'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
     })
   ]
 };
