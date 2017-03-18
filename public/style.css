@@ -63,18 +63,23 @@
     width: 100%;
     padding: 10px 0 10px 0;
     border-bottom: 2px solid darkgray; }
-    #search-page #header .login-button {
+    #search-page #header #logout-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       float: right;
       margin: 0 2em 0 0; }
-      #search-page #header .login-button div {
-        display: inline-block;
-        font-size: 16px;
-        color: black;
-        font-weight: bold; }
-      #search-page #header .login-button img {
+      #search-page #header #logout-wrapper img {
         display: inline-block;
         border-radius: 100%;
         margin: 0 .5em 0 0; }
+      #search-page #header #logout-wrapper .login-button {
+        display: inline; }
+        #search-page #header #logout-wrapper .login-button div {
+          display: inline-block;
+          font-size: 16px;
+          color: black;
+          font-weight: bold; }
     #search-page #header #title {
       display: inline-block;
       font-size: 30px;

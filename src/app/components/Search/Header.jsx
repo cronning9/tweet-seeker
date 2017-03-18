@@ -5,12 +5,14 @@ import React from 'react';
 const Header = ({user}) =>
   <header id="header">
     <div id="title">#TweetSeeker</div>
-    <a className="login-button" href="twitter/logout">
+    <div id="logout-wrapper">
       <img src={user.photos[0].value} />
-      <div id="logout">
-        Log Out
-      </div>
-    </a>
+      <a className="login-button" href="twitter/logout">
+        <div id="logout">
+          Log Out
+        </div>
+      </a>
+    </div>
   </header>
 
 Header.propTypes = {

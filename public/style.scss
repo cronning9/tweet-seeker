@@ -83,23 +83,29 @@ $light-tile-blue: #e2e8ed;
     padding: 10px 0 10px 0;
     border-bottom: 2px solid darkgray;
 
-    .login-button {
+    #logout-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       float: right;
       margin: 0 2em 0 0;
 
-      div {
-        display: inline-block;
-        font-size: 16px;
-        color: black;
-        font-weight: bold;
-      }
       img {
         display: inline-block;
         border-radius: 100%;
         margin: 0 .5em 0 0;
       }
-    }
 
+      .login-button {
+        display: inline;
+        div {
+          display: inline-block;
+          font-size: 16px;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
     #title {
       display: inline-block;
       font-size: 30px;
@@ -107,4 +113,5 @@ $light-tile-blue: #e2e8ed;
       font-weight: bold;
     }
   }
+
 }
