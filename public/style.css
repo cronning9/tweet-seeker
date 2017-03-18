@@ -8,13 +8,13 @@
 
 #splash-page {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center; }
   #splash-page #splash-content {
     width: 75%; }
@@ -44,9 +44,6 @@
 
 #logged-in {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
@@ -55,7 +52,7 @@
     margin: 1em;
     font-size: 55px; }
   #logged-in #header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -85,5 +82,29 @@
       font-size: 30px;
       margin: .1em 0 0 1em;
       font-weight: bold; }
+  #logged-in #search-page #searchbar {
+    height: 40px;
+    margin-top: 2em;
+    text-align: center; }
+    #logged-in #search-page #searchbar h1 {
+      font-size: 40px;
+      margin-bottom: .5em; }
+    #logged-in #search-page #searchbar input {
+      display: inline-block;
+      height: 42px;
+      width: 50%;
+      font-size: 18px; }
+    #logged-in #search-page #searchbar #button {
+      display: inline-block;
+      padding: 8px 0 11px 0;
+      margin-left: .2em;
+      border: 2px solid teal;
+      border-radius: 5px;
+      width: 5em;
+      background-color: #1da1f2;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

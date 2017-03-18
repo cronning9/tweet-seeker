@@ -1,11 +1,9 @@
 $tile-blue: #718fa9;
 $light-tile-blue: #e2e8ed;
+$twitter-blue: #1da1f2;
 
 @mixin top-level-component() {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
@@ -25,6 +23,9 @@ $light-tile-blue: #e2e8ed;
 
 #splash-page {
   @include top-level-component();
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 
   #splash-content {
@@ -74,7 +75,7 @@ $light-tile-blue: #e2e8ed;
   }
 
   #header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -111,6 +112,40 @@ $light-tile-blue: #e2e8ed;
       font-size: 30px;
       margin: .1em 0 0 1em;
       font-weight: bold;
+    }
+  }
+
+  #search-page {
+
+    #searchbar {
+      height: 40px;
+      margin-top: 2em;
+      text-align: center;
+
+      h1 {
+        font-size: 40px;
+        margin-bottom: .5em;
+      }
+      input {
+        display: inline-block;
+        height: 42px;
+        width: 50%;
+        font-size: 18px;
+      }
+      #button {
+        display: inline-block;
+        padding: 8px 0 11px 0;
+        margin-left: .2em;
+        border: 2px solid teal;
+        border-radius: 5px;
+        width: 5em;
+        background-color: $twitter-blue;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+
     }
   }
 

@@ -3,7 +3,7 @@
 import React from 'react';
 
 import SplashPage from './components/Splash/SplashPage.jsx';
-import LoggedIn from './components/Search/LoggedIn.jsx';
+import MainView from './components/Search/MainView.jsx';
 
 export default class App extends React.Component {
   constructor() {
@@ -31,7 +31,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id="main">
-        { !this.state.loggedIn ? <SplashPage/> : <LoggedIn user={this.state.user}/> }
+        { !this.state.loggedIn ? <SplashPage/> : <MainView user={this.state.user}/> }
       </div>
     )
   }
