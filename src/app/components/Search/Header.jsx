@@ -2,15 +2,17 @@
 
 import React from 'react';
 
-import Header from './Header.jsx';
+const Header = ({user}) =>
+  <header id="header">
+    <div id="title">#TweetSeeker</div>
+    <a className="login-button" href="twitter/logout">
+      <div id="logout">
+        <p>Logout</p>
+      </div>
+    </a>
+  </header>
 
-const SearchPage = ({user}) =>
-  <section id="search-page">
-    <Header user={user}/>
-    <p>{user.username} is logged in</p>
-  </section>
-
-SearchPage.propTypes = {
+Header.propTypes = {
   user: React.PropTypes.shape({
     id: React.PropTypes.string.isRequired,
     username: React.PropTypes.string.isRequired,
@@ -19,4 +21,4 @@ SearchPage.propTypes = {
   }).isRequired
 };
 
-export default SearchPage;
+export default Header;
