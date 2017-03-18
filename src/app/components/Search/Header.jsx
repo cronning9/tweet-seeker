@@ -6,8 +6,9 @@ const Header = ({user}) =>
   <header id="header">
     <div id="title">#TweetSeeker</div>
     <a className="login-button" href="twitter/logout">
+      <img src={user.photos[0].value} />
       <div id="logout">
-        <p>Logout</p>
+        Log Out
       </div>
     </a>
   </header>

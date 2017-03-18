@@ -9,6 +9,7 @@ $light-tile-blue: #e2e8ed;
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
+  font-family: Noto Sans, sans-serif;
 }
 
 * {
@@ -30,13 +31,11 @@ $light-tile-blue: #e2e8ed;
     width: 75%;
 
     h1 {
-      font-family: Noto Sans, sans-serif;
       font-size: 80px;
     }
 
     p {
       margin: 1em;
-      font-family: Noto Sans, sans-serif;
       font-size: 55px;
     }
 
@@ -63,11 +62,6 @@ $light-tile-blue: #e2e8ed;
     display: flex;
     justify-content: center;
     align-items: center;
-    p {
-      font-size: 16px;
-      color: black;
-      font-weight: bold;
-    }
   }
 
 }
@@ -76,7 +70,6 @@ $light-tile-blue: #e2e8ed;
   @include top-level-component();
   p {
     margin: 1em;
-    font-family: Noto Sans, sans-serif;
     font-size: 55px;
   }
 
@@ -85,14 +78,26 @@ $light-tile-blue: #e2e8ed;
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 30px;
+    height: 40px;
     width: 100%;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 10px 0;
     border-bottom: 2px solid darkgray;
 
     .login-button {
       float: right;
-      margin: .2em 2em 0 0;
+      margin: 0 2em 0 0;
+
+      div {
+        display: inline-block;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+      }
+      img {
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 .5em 0 0;
+      }
     }
 
     #title {

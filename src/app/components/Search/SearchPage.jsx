@@ -7,7 +7,7 @@ import Header from './Header.jsx';
 const SearchPage = ({user}) =>
   <section id="search-page">
     <Header user={user}/>
-    <p>{user.username} is logged in</p>
+    <p>{user.username} is Logged in</p>
   </section>
 
 SearchPage.propTypes = {

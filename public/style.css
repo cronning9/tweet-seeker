@@ -14,15 +14,14 @@
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
+  font-family: Noto Sans, sans-serif;
   text-align: center; }
   #splash-page #splash-content {
     width: 75%; }
     #splash-page #splash-content h1 {
-      font-family: Noto Sans, sans-serif;
       font-size: 80px; }
     #splash-page #splash-content p {
       margin: 1em;
-      font-family: Noto Sans, sans-serif;
       font-size: 55px; }
 
 .login-button {
@@ -42,10 +41,6 @@
     display: flex;
     justify-content: center;
     align-items: center; }
-    .login-button #logout p {
-      font-size: 16px;
-      color: black;
-      font-weight: bold; }
 
 #search-page {
   position: absolute;
@@ -54,23 +49,32 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #718fa9, #e2e8ed); }
+  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
+  font-family: Noto Sans, sans-serif; }
   #search-page p {
     margin: 1em;
-    font-family: Noto Sans, sans-serif;
     font-size: 55px; }
   #search-page #header {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 30px;
+    height: 40px;
     width: 100%;
-    padding: 10px 0 20px 0;
+    padding: 10px 0 10px 0;
     border-bottom: 2px solid darkgray; }
     #search-page #header .login-button {
       float: right;
-      margin: .2em 2em 0 0; }
+      margin: 0 2em 0 0; }
+      #search-page #header .login-button div {
+        display: inline-block;
+        font-size: 16px;
+        color: black;
+        font-weight: bold; }
+      #search-page #header .login-button img {
+        display: inline-block;
+        border-radius: 100%;
+        margin: 0 .5em 0 0; }
     #search-page #header #title {
       display: inline-block;
       font-size: 30px;
