@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center; }
 
-#search-page {
+#logged-in {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -51,10 +51,10 @@
   width: 100%;
   background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif; }
-  #search-page p {
+  #logged-in p {
     margin: 1em;
     font-size: 55px; }
-  #search-page #header {
+  #logged-in #header {
     position: fixed;
     top: 0;
     left: 0;
@@ -63,24 +63,24 @@
     width: 100%;
     padding: 10px 0 10px 0;
     border-bottom: 2px solid darkgray; }
-    #search-page #header #logout-wrapper {
+    #logged-in #header #logout-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
       float: right;
       margin: 0 2em 0 0; }
-      #search-page #header #logout-wrapper img {
+      #logged-in #header #logout-wrapper img {
         display: inline-block;
         border-radius: 100%;
         margin: 0 .5em 0 0; }
-      #search-page #header #logout-wrapper .login-button {
+      #logged-in #header #logout-wrapper .login-button {
         display: inline; }
-        #search-page #header #logout-wrapper .login-button div {
+        #logged-in #header #logout-wrapper .login-button div {
           display: inline-block;
           font-size: 16px;
           color: black;
           font-weight: bold; }
-    #search-page #header #title {
+    #logged-in #header #title {
       display: inline-block;
       font-size: 30px;
       margin: .1em 0 0 1em;

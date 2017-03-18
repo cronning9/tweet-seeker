@@ -4,13 +4,13 @@ import React from 'react';
 
 import Header from './Header.jsx';
 
-const SearchPage = ({user}) =>
-  <section id="search-page">
+const LoggedIn = ({user}) =>
+  <main id="logged-in">
     <Header user={user}/>
     <p>{user.username} is Logged in</p>
-  </section>
+  </main>
 
-SearchPage.propTypes = {
+LoggedIn.propTypes = {
   user: React.PropTypes.shape({
     id: React.PropTypes.string.isRequired,
     username: React.PropTypes.string.isRequired,
@@ -19,4 +19,4 @@ SearchPage.propTypes = {
   }).isRequired
 };
 
-export default SearchPage;
+export default LoggedIn;
