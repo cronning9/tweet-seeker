@@ -10,6 +10,7 @@ $light-tile-blue: #e2e8ed;
   width: 100%;
   background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +24,6 @@ $light-tile-blue: #e2e8ed;
 
 #splash-page {
   @include top-level-component();
-
   text-align: center;
 
   #splash-content {
@@ -40,18 +40,33 @@ $light-tile-blue: #e2e8ed;
       font-size: 55px;
     }
 
-    #twitter-login {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      div {
-        background-color: lightgrey;
-        width: 160px;
-        padding: .4em;
-        border: .5px solid darkgrey;
-      }
+  }
 
+}
 
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  div {
+    background-color: lightgrey;
+    width: 160px;
+    padding: .4em;
+    border: .5px solid darkgrey;
+  }
+
+  #logout {
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 16px;
+      color: black;
+      font-weight: bold;
     }
   }
 
@@ -63,5 +78,28 @@ $light-tile-blue: #e2e8ed;
     margin: 1em;
     font-family: Noto Sans, sans-serif;
     font-size: 55px;
+  }
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 30px;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    border-bottom: 2px solid darkgray;
+
+    .login-button {
+      float: right;
+      margin: .2em 2em 0 0;
+    }
+
+    #title {
+      display: inline-block;
+      font-size: 30px;
+      margin: .1em 0 0 1em;
+      font-weight: bold;
+    }
   }
 }

@@ -15,7 +15,7 @@ router.get('/auth', passport.authenticate('twitter', {failureFlash: 'Unable to a
   });
 
 router.get('/get-user', (req, res) => {
-  if (req.session.passport) {
+  if (req.session.passport && req.session.passport.user) {
     const userData = req.session.passport.user;
     const sending = {
       loggedIn: true,
@@ -34,5 +34,10 @@ router.get('/get-user', (req, res) => {
     })
   }
 });
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+})
 
 module.exports = router;
