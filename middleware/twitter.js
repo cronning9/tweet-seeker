@@ -3,7 +3,6 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const qs = require('querystring');
 const request = require('request-promise');
 const passport = require('passport');
 
