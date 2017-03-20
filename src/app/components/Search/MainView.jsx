@@ -48,7 +48,9 @@ export default class MainView extends React.Component {
       <main id="logged-in">
         <Header user={this.props.user} clearSearchData={this.clearSearchData} />
         { this.state.data ?
-          <ResultsPage user={this.props.user} results={this.state.searchResults} /> :
+          <ResultsPage user={this.props.user}
+                       results={this.state.searchResults}
+                       clearSearchData={this.clearSearchData}/> :
           <SearchPage user={this.props.user} searchTweets={this.searchTweets} />
         }
       </main>
