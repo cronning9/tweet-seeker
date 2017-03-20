@@ -46,12 +46,14 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/search', (req, res) => {
-  const q = (req.query.q);
-  const geocode = req.query.geocode;
-  const result_type = 'mixed';
-  const count = 50;
+  const q = qs.escape(req.query.q);
+  // TODO: may eventually make the radius adjustable by user.
+  const geocode = `${qs.escape(req.query.geocode.latitude)},${qs.escape(req.query.geocode.longitude)},50mi`;
+  const result_type = qs.escape('mixed');
+  const count = qs.escape('50');
 
-  const url = `https://api.twitter.com/1.1/search/tweets.json?q=${q}&geocode=${geocode}&result_type=${result_type}&count=${count}`;
+  const url = `https://api.twitter.com/1.1/search/tweets.json?q=${q}` +
+              `&geocode=${geocode}&result_type=${result_type}&count=${count}`;
   const oauth = {
     consumer_key: CLIENT_KEY,
     consumer_secret: CLIENT_SECRET,
@@ -59,8 +61,9 @@ router.get('/search', (req, res) => {
     token_secret: req.session.passport.user.tokenSecret
   };
 
-  request({url: url, oauth, json: true})
+  request({url, oauth, json: true})
     .then(response => res.send(response))
     .catch(err => console.error(Error(err)));
 });
+
 module.exports = router;

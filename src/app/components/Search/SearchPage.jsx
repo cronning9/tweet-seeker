@@ -5,13 +5,13 @@ import React from 'react';
 import userPropType from '../util/userShape.js';
 
 const SearchPage = ({user}) => {
-  const constructSearch = (q, coords) => {
-    const query = q;
-    const geocode = coords;
-    fetch('twitter/search', {
-      method: 'GET',
-      credentials: 'same-origin'
-    }).then(res => res.json()).then(json => console.log(json));
+  const constructSearch = (query, geocode) => {
+    fetch(`twitter/search?q=${encodeURIComponent(query)}&geocode[latitude]=${encodeURIComponent(geocode.latitude)}` +
+          `&geocode[longitude]=${encodeURIComponent(geocode.longitude)}`,
+      {
+        method: 'GET',
+        credentials: 'same-origin'
+      }).then(res => res.json()).then(json => console.log(json));
   };
 
   const submitSearch = event => constructSearch(document.getElementById('hashtag-input').value, coordinates);
@@ -29,8 +29,8 @@ const SearchPage = ({user}) => {
   return (
     <section id="search-page">
       <section id="searchbar">
-        <h1>Find what's trending nearby</h1>
-        <input id="hashtag-input" type="text" placeholder="Look up a hashtag"/>
+        <h1>Find out who's tweeting nearby</h1>
+        <input id="hashtag-input" type="text" placeholder="Interested in a hashtag, word, or phrase?"/>
         <div className="button" onClick={submitSearch}>Submit</div>
       </section>
     </section>
