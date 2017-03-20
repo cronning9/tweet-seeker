@@ -8,6 +8,10 @@ const SearchPage = ({user}) => {
   const constructSearch = (q, coords) => {
     const query = q;
     const geocode = coords;
+    fetch('twitter/search', {
+      method: 'GET',
+      credentials: 'same-origin'
+    }).then(res => res.json()).then(json => console.log(json));
   };
 
   const submitSearch = event => constructSearch(document.getElementById('hashtag-input').value, coordinates);

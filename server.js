@@ -35,7 +35,11 @@ passport.use(new TwitterStrategy({
   consumerKey: CLIENT_KEY,
   consumerSecret: CLIENT_SECRET,
   callbackURL: CALLBACK_URL
-}, (token, tokenSecret, profile, callback) => callback(null, profile)));
+}, (token, tokenSecret, profile, callback) => {
+  profile.token = token;
+  profile.tokenSecret = tokenSecret;
+  callback(null, profile)
+}));
 
 passport.serializeUser((user, cb) => {
   cb(null, user);
