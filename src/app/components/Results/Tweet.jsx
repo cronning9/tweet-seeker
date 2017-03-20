@@ -2,11 +2,28 @@
 
 import React from 'react';
 
-const Tweet = ({status}) =>
-  <div className="tweet">
+const Tweet = ({status}) => {
+  const parseDate = dateString => {
+    const arr = dateString.split(' ');
+    return `${arr[0]} ${arr[1]} ${arr[2]}, ${arr[arr.length - 1]}`
+  };
 
-  </div>
-
+  return (
+    <section className="tweet">
+      <header>
+        <div className="tweeter">
+          <img src={status.profile_image_url_https}/>
+          <h5>@{status.user}</h5>
+        </div>
+        <div className="tweet-meta">
+          <h5>{parseDate(status.created_at)}</h5>
+          <h5>{status.place.full_name}</h5>
+        </div>
+      </header>
+      <p>{status.text}</p>
+    </section>
+  )
+}
 
 Tweet.propTypes = {
   status: React.PropTypes.shape({

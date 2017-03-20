@@ -1,3 +1,9 @@
+html {
+  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -10,7 +16,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif;
   display: flex;
   justify-content: center;
@@ -46,7 +51,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif; }
   #logged-in p {
     margin: 1em;
@@ -119,8 +123,7 @@
     justify-content: center;
     width: 100%; }
     #logged-in #results-page #flex-container {
-      width: 60%;
-      min-width: 600px;
+      justify-content: center;
       margin-left: auto;
       margin-right: auto; }
       #logged-in #results-page #flex-container .results-header h1, #logged-in #results-page #flex-container .results-header h4 {
@@ -130,7 +133,22 @@
         #logged-in #results-page #flex-container .results-header h1 span {
           color: #8b0000; }
       #logged-in #results-page #flex-container .results {
-        border: 1px solid black;
-        height: 500px; }
+        border: 1px solid black; }
+        #logged-in #results-page #flex-container .results .tweet {
+          flex-direction: column;
+          width: 600px;
+          border: 1px solid darkgray;
+          background-color: white; }
+          #logged-in #results-page #flex-container .results .tweet header {
+            width: 100%;
+            flex-direction: row; }
+            #logged-in #results-page #flex-container .results .tweet header .tweeter {
+              float: left;
+              flex-direction: row; }
+            #logged-in #results-page #flex-container .results .tweet header .tweet-meta {
+              float: right;
+              flex-direction: column; }
+          #logged-in #results-page #flex-container .results .tweet p {
+            font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */
