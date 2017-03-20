@@ -12,15 +12,21 @@ const Tweet = ({status}) => {
     <section className="tweet">
       <header>
         <div className="tweeter">
-          <img src={status.profile_image_url_https}/>
-          <h5>@{status.user}</h5>
+          <a href={"https://www.twitter.com/" + status.user }>
+            <div className="link-content">
+              <img src={status.profile_image_url_https}/>
+              <h5>@{status.user}</h5>
+            </div>
+          </a>
         </div>
         <div className="tweet-meta">
           <h5>{parseDate(status.created_at)}</h5>
           <h5>{status.place.full_name}</h5>
         </div>
       </header>
-      <p>{status.text}</p>
+      <div>
+        <p>{status.text}</p>
+      </div>
     </section>
   )
 }

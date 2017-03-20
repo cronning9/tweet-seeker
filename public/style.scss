@@ -191,25 +191,46 @@ html {
         border: 1px solid black;
 
         .tweet {
+          display: flex;
           flex-direction: column;
           width: 600px;
           border: 1px solid darkgray;
           background-color: white;
 
+
           header {
+            display: block;
+            position: relative;
             width: 100%;
-            flex-direction: row;
 
             .tweeter {
               float: left;
-              flex-direction: row;
 
+              .link-content {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+              }
+              a {
+                text-decoration: none;
+              }
+
+              img, h5 {
+                display: inline-block;
+                margin: .2em;
+              }
+
+              h5 {
+                font-weight: bold;
+                color: black;
+              }
             }
 
             .tweet-meta {
+              display: inline-block;
               float: right;
               flex-direction: column;
-
+              margin-right: .2em;
             }
           }
 

@@ -135,19 +135,34 @@ html {
       #logged-in #results-page #flex-container .results {
         border: 1px solid black; }
         #logged-in #results-page #flex-container .results .tweet {
+          display: flex;
           flex-direction: column;
           width: 600px;
           border: 1px solid darkgray;
           background-color: white; }
           #logged-in #results-page #flex-container .results .tweet header {
-            width: 100%;
-            flex-direction: row; }
+            display: block;
+            position: relative;
+            width: 100%; }
             #logged-in #results-page #flex-container .results .tweet header .tweeter {
-              float: left;
-              flex-direction: row; }
+              float: left; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter .link-content {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter a {
+                text-decoration: none; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter img, #logged-in #results-page #flex-container .results .tweet header .tweeter h5 {
+                display: inline-block;
+                margin: .2em; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter h5 {
+                font-weight: bold;
+                color: black; }
             #logged-in #results-page #flex-container .results .tweet header .tweet-meta {
+              display: inline-block;
               float: right;
-              flex-direction: column; }
+              flex-direction: column;
+              margin-right: .2em; }
           #logged-in #results-page #flex-container .results .tweet p {
             font-size: 18px; }
 
