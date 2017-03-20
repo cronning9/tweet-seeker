@@ -29,7 +29,8 @@ const SearchPage = ({user, searchTweets}) => {
 }
 
 SearchPage.propTypes = {
-  user: userPropType.isRequired
+  user: userPropType.isRequired,
+  searchTweets: React.PropTypes.func.isRequired
 };
 
 export default SearchPage;

@@ -3,7 +3,8 @@
 import React from 'react';
 
 import Header from './Header.jsx';
-import SearchPage from './SearchPage.jsx'
+import SearchPage from './SearchPage.jsx';
+import ResultsPage from '../Results/ResultsPage.jsx';
 
 import userPropType from '../util/userShape.js';
 
@@ -16,6 +17,7 @@ export default class MainView extends React.Component {
     };
 
     this.searchTweets = this.searchTweets.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   searchTweets(query, geocode) {
@@ -35,16 +37,28 @@ export default class MainView extends React.Component {
         });
   }
 
+  clearState() {
+    console.log("Clearing state");
+    this.setState({
+      data: false,
+      searchResults: { }
+    })
+
+    console.log(this.state);
+  }
+
   render() {
     return (
       <main id="logged-in">
-        <Header user={this.props.user}/>
-        <SearchPage user={this.props.user} searchTweets={this.searchTweets}/>
+        <Header user={this.props.user} clearState={this.clearState} />
+        { this.state.data ?
+          <ResultsPage user={this.props.user} results={this.state.searchResults} /> :
+          <SearchPage user={this.props.user} searchTweets={this.searchTweets} />
+        }
       </main>
     )
   }
 }
-
 
 MainView.propTypes = {
   user: userPropType.isRequired
