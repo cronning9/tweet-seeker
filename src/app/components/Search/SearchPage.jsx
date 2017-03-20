@@ -4,10 +4,13 @@ import React from 'react';
 
 import userPropType from '../util/userShape.js';
 
-const SearchPage = ({user}) => {
+const SearchPage = ({user, searchTweets}) => {
+  const submitSearch = event => searchTweets(document.getElementById('hashtag-input').value, coordinates);
+
   let coordinates;
   if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(pos => coordinates = pos,
+    navigator.geolocation.getCurrentPosition(pos => coordinates = { latitude: pos.coords.latitude,
+                                                                    longitude: pos.coords.longitude },
                                              err => console.warn(err));
   } else {
     console.log("No location available");
@@ -17,16 +20,17 @@ const SearchPage = ({user}) => {
   return (
     <section id="search-page">
       <section id="searchbar">
-        <h1>Find what's trending nearby</h1>
-        <input id="hashtag" type="text" placeholder="Look up a hashtag"/>
-        <div className="button">Submit</div>
+        <h1>Find out who's tweeting nearby</h1>
+        <input id="hashtag-input" type="text" placeholder="Interested in a hashtag, word, or phrase?"/>
+        <div className="button" onClick={submitSearch}>Submit</div>
       </section>
     </section>
-  );
+  )
 }
 
 SearchPage.propTypes = {
-  user: userPropType.isRequired
+  user: userPropType.isRequired,
+  searchTweets: React.PropTypes.func.isRequired
 };
 
 export default SearchPage;
