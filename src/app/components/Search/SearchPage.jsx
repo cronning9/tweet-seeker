@@ -4,17 +4,8 @@ import React from 'react';
 
 import userPropType from '../util/userShape.js';
 
-const SearchPage = ({user}) => {
-  const constructSearch = (query, geocode) => {
-    fetch(`twitter/search?q=${encodeURIComponent(query)}&geocode[latitude]=${encodeURIComponent(geocode.latitude)}` +
-          `&geocode[longitude]=${encodeURIComponent(geocode.longitude)}`,
-      {
-        method: 'GET',
-        credentials: 'same-origin'
-      }).then(res => res.json()).then(json => console.log(json));
-  };
-
-  const submitSearch = event => constructSearch(document.getElementById('hashtag-input').value, coordinates);
+const SearchPage = ({user, searchTweets}) => {
+  const submitSearch = event => searchTweets(document.getElementById('hashtag-input').value, coordinates);
 
   let coordinates;
   if ("geolocation" in navigator) {

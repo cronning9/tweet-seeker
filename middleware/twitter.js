@@ -62,7 +62,33 @@ router.get('/search', (req, res) => {
   };
 
   request({url, oauth, json: true})
-    .then(response => res.send(response))
+    .then(response => {
+      const result = {
+        statuses: [],
+        search_metadata: response.search_metadata,
+      };
+
+      let tweet;
+      for (let status of response.statuses) {
+        tweet = {
+          id: status.id_str,
+          user: status.user.screen_name,
+          profile_image_url_https: status.user.profile_image_url_https,
+          created_at: status.created_at,
+          text: status.text,
+          place: {
+            coordinates: status.place.bounding_box.coordinates,
+            name: status.place.name,
+            full_name: status.place.full_name,
+            country: status.place.country
+          }
+        };
+
+        result.statuses.push(tweet);
+      }
+
+      res.send(JSON.stringify(result));
+    })
     .catch(err => console.error(Error(err)));
 });
 
