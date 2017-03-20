@@ -23,7 +23,9 @@ router.get('/get-user', (req, res) => {
         id: userData.id,
         username: userData.username,
         displayName: userData.displayName,
-        photos: userData.photos
+        photos: userData.photos,
+        location: userData._json.location,
+        status: userData._json.status
       }
     };
     res.json(sending);

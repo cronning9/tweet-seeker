@@ -5,7 +5,7 @@ import React from 'react';
 import twlogin from '../../../assets/images/sign-in-with-twitter-link.png'
 
 const SplashPage = () =>
-  <section id="splash-page">
+  <main id="splash-page">
     <div id="splash-content">
       <h1>#TweetSeeker</h1>
       <p>Find #trending topics in your area. Join the conversation!</p>
@@ -15,6 +15,6 @@ const SplashPage = () =>
         </div>
       </a>
     </div>
-  </section>
+  </main>
 
 export default SplashPage;
