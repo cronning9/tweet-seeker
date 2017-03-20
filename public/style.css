@@ -1,3 +1,9 @@
+html {
+  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -10,7 +16,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif;
   display: flex;
   justify-content: center;
@@ -46,7 +51,6 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #718fa9, #e2e8ed);
   font-family: Noto Sans, sans-serif; }
   #logged-in p {
     margin: 1em;
@@ -81,6 +85,18 @@
       font-size: 30px;
       margin: .1em 0 0 1em;
       font-weight: bold; }
+  #logged-in .button {
+    display: block;
+    padding: 8px 0 11px 0;
+    margin-left: .2em;
+    border: 2px solid teal;
+    border-radius: 5px;
+    width: 5em;
+    background-color: #1da1f2;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer; }
   #logged-in #search-page {
     display: flex;
     justify-content: center;
@@ -102,16 +118,59 @@
       #logged-in #search-page #searchbar #location {
         margin-bottom: 1em; }
       #logged-in #search-page #searchbar .button {
-        display: inline-block;
-        padding: 8px 0 11px 0;
-        margin-left: .2em;
-        border: 2px solid teal;
-        border-radius: 5px;
-        width: 5em;
-        background-color: #1da1f2;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer; }
+        display: inline-block; }
+  #logged-in #results-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; }
+    #logged-in #results-page #flex-container {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto; }
+      #logged-in #results-page #flex-container .button {
+        width: 12em;
+        font-size: 16px;
+        margin: 0 auto; }
+      #logged-in #results-page #flex-container .results-header h1, #logged-in #results-page #flex-container .results-header h4 {
+        text-align: center; }
+      #logged-in #results-page #flex-container .results-header h1 {
+        font-size: 35px; }
+        #logged-in #results-page #flex-container .results-header h1 span {
+          color: #8b0000; }
+      #logged-in #results-page #flex-container .results {
+        margin-top: 1em;
+        border: 1px solid black; }
+        #logged-in #results-page #flex-container .results .tweet {
+          display: flex;
+          flex-direction: column;
+          width: 600px;
+          border: 1px solid darkgray;
+          background-color: white; }
+          #logged-in #results-page #flex-container .results .tweet header {
+            display: block;
+            position: relative;
+            width: 100%; }
+            #logged-in #results-page #flex-container .results .tweet header .tweeter {
+              float: left; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter .link-content {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter a {
+                text-decoration: none; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter img, #logged-in #results-page #flex-container .results .tweet header .tweeter h5 {
+                display: inline-block;
+                margin: .2em; }
+              #logged-in #results-page #flex-container .results .tweet header .tweeter h5 {
+                font-weight: bold;
+                color: black; }
+            #logged-in #results-page #flex-container .results .tweet header .tweet-meta {
+              display: inline-block;
+              float: right;
+              flex-direction: column;
+              margin-right: .2em; }
+          #logged-in #results-page #flex-container .results .tweet p {
+            font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */

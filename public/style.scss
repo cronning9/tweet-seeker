@@ -6,8 +6,14 @@ $twitter-blue: #1da1f2;
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
   font-family: Noto Sans, sans-serif;
+}
+
+html {
+  background-image: linear-gradient(to right top, $tile-blue, $light-tile-blue);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 * {
@@ -18,7 +24,6 @@ $twitter-blue: #1da1f2;
 #app {
   height: 100%;
   width: 100%;
-
 }
 
 #splash-page {
@@ -114,6 +119,20 @@ $twitter-blue: #1da1f2;
     }
   }
 
+  .button {
+    display: block;
+    padding: 8px 0 11px 0;
+    margin-left: .2em;
+    border: 2px solid teal;
+    border-radius: 5px;
+    width: 5em;
+    background-color: $twitter-blue;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+
   #search-page {
     display: flex;
     justify-content: center;
@@ -139,21 +158,99 @@ $twitter-blue: #1da1f2;
       #location {
         margin-bottom: 1em;
       }
+
       .button {
         display: inline-block;
-        padding: 8px 0 11px 0;
-        margin-left: .2em;
-        border: 2px solid teal;
-        border-radius: 5px;
-        width: 5em;
-        background-color: $twitter-blue;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer;
       }
-
     }
   }
 
+  #results-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    #flex-container {
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+
+      .button {
+        width: 12em;
+        font-size: 16px;
+        margin: 0 auto;
+      }
+      .results-header {
+        h1, h4 {
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 35px;
+
+          span {
+            color: #8b0000;
+          }
+        }
+
+
+      }
+
+      .results {
+        margin-top: 1em;
+        border: 1px solid black;
+
+        .tweet {
+          display: flex;
+          flex-direction: column;
+          width: 600px;
+          border: 1px solid darkgray;
+          background-color: white;
+
+
+          header {
+            display: block;
+            position: relative;
+            width: 100%;
+
+            .tweeter {
+              float: left;
+
+              .link-content {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+              }
+              a {
+                text-decoration: none;
+              }
+
+              img, h5 {
+                display: inline-block;
+                margin: .2em;
+              }
+
+              h5 {
+                font-weight: bold;
+                color: black;
+              }
+            }
+
+            .tweet-meta {
+              display: inline-block;
+              float: right;
+              flex-direction: column;
+              margin-right: .2em;
+            }
+          }
+
+          p {
+            font-size: 18px;
+          }
+
+        }
+      }
+    }
+  }
 }
