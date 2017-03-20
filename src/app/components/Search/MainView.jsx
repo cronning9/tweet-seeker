@@ -17,7 +17,7 @@ export default class MainView extends React.Component {
     };
 
     this.searchTweets = this.searchTweets.bind(this);
-    this.clearState = this.clearState.bind(this);
+    this.clearSearchData = this.clearSearchData.bind(this);
   }
 
   searchTweets(query, geocode) {
@@ -32,25 +32,21 @@ export default class MainView extends React.Component {
             data: true,
             searchResults: json
           });
-
-          console.log(this.state);
         });
   }
 
-  clearState() {
-    console.log("Clearing state");
+  clearSearchData() {
     this.setState({
       data: false,
       searchResults: { }
     })
-
-    console.log(this.state);
   }
 
   render() {
+    console.log(this.state);
     return (
       <main id="logged-in">
-        <Header user={this.props.user} clearState={this.clearState} />
+        <Header user={this.props.user} clearSearchData={this.clearSearchData} />
         { this.state.data ?
           <ResultsPage user={this.props.user} results={this.state.searchResults} /> :
           <SearchPage user={this.props.user} searchTweets={this.searchTweets} />

@@ -113,5 +113,24 @@
         font-weight: bold;
         color: white;
         cursor: pointer; }
+  #logged-in #results-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; }
+    #logged-in #results-page #flex-container {
+      width: 60%;
+      min-width: 600px;
+      margin-left: auto;
+      margin-right: auto; }
+      #logged-in #results-page #flex-container .results-header h1, #logged-in #results-page #flex-container .results-header h4 {
+        text-align: center; }
+      #logged-in #results-page #flex-container .results-header h1 {
+        font-size: 35px; }
+        #logged-in #results-page #flex-container .results-header h1 span {
+          color: #8b0000; }
+      #logged-in #results-page #flex-container .results {
+        border: 1px solid black;
+        height: 500px; }
 
 /*# sourceMappingURL=style.css.map */
