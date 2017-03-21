@@ -1,6 +1,10 @@
 {
   "name": "trend-seek",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.7.2",
+    "npm": "4.1.2"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
