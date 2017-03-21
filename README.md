@@ -3,7 +3,7 @@
 This is going to be an interface that allows users to find trending topics in their region,
 run a google search to find related items, and then tweet them, all in one fluid cycle.
 
-For now, a demo can be accessed at [http://tweet-seeker.herokuapp.com](http://tweet-seeker.herokuapp.com),
+For now, a demo can be accessed at [https://tweet-seeker.herokuapp.com](https://tweet-seeker.herokuapp.com),
  until I can figure out how to get it on a subdomain of my own.
   
 ### Automation
