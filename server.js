@@ -68,7 +68,7 @@ app.use(passport.session());
 
 app.use('/twitter', twitter);
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   try {
     res.send(path.join(__dirname, 'public', 'index.html'));
   } catch(err) {
