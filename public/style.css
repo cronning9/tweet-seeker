@@ -139,7 +139,7 @@ html {
         #logged-in #results-page #flex-container .results-header h1 span {
           color: #8b0000; }
       #logged-in #results-page #flex-container .results {
-        margin-top: 1em;
+        margin: 1em 0 1em 0;
         border: 1px solid black; }
         #logged-in #results-page #flex-container .results .tweet {
           display: flex;
@@ -172,5 +172,28 @@ html {
               margin-right: .2em; }
           #logged-in #results-page #flex-container .results .tweet p {
             font-size: 18px; }
+          #logged-in #results-page #flex-container .results .tweet .buttons {
+            display: block; }
+            #logged-in #results-page #flex-container .results .tweet .buttons div {
+              float: right;
+              margin-right: 1em;
+              cursor: pointer; }
+          #logged-in #results-page #flex-container .results .tweet .retweet-dropdown {
+            display: none;
+            border-top: 1px solid black;
+            height: 120px;
+            text-align: center; }
+            #logged-in #results-page #flex-container .results .tweet .retweet-dropdown p {
+              font-size: 16px; }
+            #logged-in #results-page #flex-container .results .tweet .retweet-dropdown .button {
+              display: inline-block;
+              margin: 1em;
+              padding: 5px 0 8px 0;
+              font-size: 14px; }
+          #logged-in #results-page #flex-container .results .tweet .retweet-response {
+            display: none;
+            border-top: 1px solid black;
+            height: 80px;
+            text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

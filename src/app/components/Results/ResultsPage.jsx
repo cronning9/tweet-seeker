@@ -10,7 +10,7 @@ const ResultsPage = ({user, results, clearSearchData}) =>
   <section id="results-page">
     <div id="flex-container">
       <div className="results-header">
-        <h1>{results.statuses.length} Results for: <span>{results.search_metadata.query}</span></h1>
+        <h1>{results.statuses.length} Results for: <span>{decodeURIComponent(results.search_metadata.query)}</span></h1>
         <h4>Search completed in: <span>{results.search_metadata.completed_in}</span>seconds</h4>
       </div>
       <button className="button" onClick={clearSearchData}>Perform a new search</button>
