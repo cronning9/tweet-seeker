@@ -8,6 +8,14 @@ const Tweet = ({status}) => {
     return `${arr[0]} ${arr[1]} ${arr[2]}, ${arr[arr.length - 1]}`
   };
 
+  const showDropdown = event => {
+    let tweet = event.target.parentElement;
+    while (!tweet || tweet.className !== "tweet") {
+      tweet = tweet.parentElement;
+    }
+    tweet.getElementsByClassName('retweet-dropdown')[0].style.display = 'block';
+  };
+
   return (
     <section className="tweet">
       <header>
@@ -28,7 +36,11 @@ const Tweet = ({status}) => {
         <p>{status.text}</p>
       </div>
       <div className="buttons">
-        <a><i className="fa fa3 fa-retweet" aria-hidden="true"></i> Retweet</a>
+        <div onClick={showDropdown}><i className="fa fa3 fa-retweet" aria-hidden="true"></i> Retweet</div>
+      </div>
+      <div className="retweet-dropdown">
+        <p>Are you sure you want to retweet this?</p>
+        <div className="button">Yes</div><div className="button">No</div>
       </div>
     </section>
   )

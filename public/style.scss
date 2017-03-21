@@ -252,9 +252,28 @@ html {
           .buttons {
             display: block;
 
-            a {
+            div {
               float: right;
               margin-right: 1em;
+              cursor: pointer;
+            }
+          }
+
+          .retweet-dropdown {
+            display: none;
+            border-top: 1px solid black;
+            height: 120px;
+            text-align: center;
+
+            p {
+              font-size: 16px;
+            }
+
+            .button {
+              display: inline-block;
+              margin: 1em;
+              padding: 5px 0 8px 0;
+              font-size: 14px;
             }
           }
         }

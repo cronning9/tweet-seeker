@@ -174,8 +174,21 @@ html {
             font-size: 18px; }
           #logged-in #results-page #flex-container .results .tweet .buttons {
             display: block; }
-            #logged-in #results-page #flex-container .results .tweet .buttons a {
+            #logged-in #results-page #flex-container .results .tweet .buttons div {
               float: right;
-              margin-right: 1em; }
+              margin-right: 1em;
+              cursor: pointer; }
+          #logged-in #results-page #flex-container .results .tweet .retweet-dropdown {
+            display: none;
+            border-top: 1px solid black;
+            height: 120px;
+            text-align: center; }
+            #logged-in #results-page #flex-container .results .tweet .retweet-dropdown p {
+              font-size: 16px; }
+            #logged-in #results-page #flex-container .results .tweet .retweet-dropdown .button {
+              display: inline-block;
+              margin: 1em;
+              padding: 5px 0 8px 0;
+              font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */
