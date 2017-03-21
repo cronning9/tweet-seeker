@@ -27,6 +27,9 @@ const Tweet = ({status}) => {
       <div>
         <p>{status.text}</p>
       </div>
+      <div className="buttons">
+        <a><i className="fa fa3 fa-retweet" aria-hidden="true"></i> Retweet</a>
+      </div>
     </section>
   )
 }

@@ -139,7 +139,7 @@ html {
         #logged-in #results-page #flex-container .results-header h1 span {
           color: #8b0000; }
       #logged-in #results-page #flex-container .results {
-        margin-top: 1em;
+        margin: 1em 0 1em 0;
         border: 1px solid black; }
         #logged-in #results-page #flex-container .results .tweet {
           display: flex;
@@ -172,5 +172,10 @@ html {
               margin-right: .2em; }
           #logged-in #results-page #flex-container .results .tweet p {
             font-size: 18px; }
+          #logged-in #results-page #flex-container .results .tweet .buttons {
+            display: block; }
+            #logged-in #results-page #flex-container .results .tweet .buttons a {
+              float: right;
+              margin-right: 1em; }
 
 /*# sourceMappingURL=style.css.map */
