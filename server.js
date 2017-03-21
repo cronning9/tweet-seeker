@@ -21,7 +21,7 @@ const twitter = require('./middleware/twitter');
 const SESSION_SECRET = process.env.SESSION_SECRET;
 const CLIENT_KEY = process.env.CLIENT_KEY;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const CALLBACK_URL = 'http://localhost:3000/twitter/auth';
+const CALLBACK_URL = 'http://tweet-seeker.herokuapp.com/twitter/auth';
 
 if (process.env.NODE_ENV === "DEVELOPMENT") {
   console.log("in development");
