@@ -22,7 +22,9 @@
     "passport-twitter": "^1.0.4",
     "request": "^2.81.0",
     "request-promise": "^4.1.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -36,7 +38,5 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "url-loader": "^0.5.8",
-    "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.1"
   }
 }
