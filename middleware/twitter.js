@@ -92,4 +92,24 @@ router.get('/search', (req, res) => {
     .catch(err => console.error(Error(err)));
 });
 
+router.post('/retweet', (req, res) => {
+  const id=req.query.id;
+
+  const url = `https://api.twitter.com/1.1/statuses/retweet/${id}.json`;
+
+  const oauth = {
+    consumer_key: CLIENT_KEY,
+    consumer_secret: CLIENT_SECRET,
+    token: req.session.passport.user.token,
+    token_secret: req.session.passport.user.tokenSecret
+  };
+
+  request({method: 'POST', url, oauth, json: true})
+    .then(response => res.send(JSON.stringify({sent: true})))
+    .catch(err => {
+      console.error(err)
+      res.send(JSON.stringify({sent: false}));
+    });
+})
+
 module.exports = router;

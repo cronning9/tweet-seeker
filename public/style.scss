@@ -276,6 +276,13 @@ html {
               font-size: 14px;
             }
           }
+
+          .retweet-response {
+            display: none;
+            border-top: 1px solid black;
+            height: 80px;
+            text-align: center;
+          }
         }
       }
     }
