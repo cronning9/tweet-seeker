@@ -2,3 +2,4 @@
 node_modules
 # startup script on Windows
 *.ps1
+public/bundle.js
